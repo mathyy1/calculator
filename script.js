@@ -1,9 +1,11 @@
+'use strict';
+
 function add(num1, num2) {
     return num1 + num2;
 }
 
 function subtract(num1, num2) {
-    return num1 - num2
+    return num1 - num2;
 }
 
 function multiply(num1, num2) {
@@ -40,11 +42,10 @@ const buttons = document.querySelector('.buttons');
 
 // handlers
 function handleDigit(value){
+    isError = false;
     if (lastActionWasEquals && operator === null) {
         num1 = value;
-        isError = false;
         lastActionWasEquals = false;
-
         render();
         return;
     }
@@ -53,7 +54,6 @@ function handleDigit(value){
     } else {
         num2 = (num2 === null || num2 === '0') ? value : num2 + value;
     }
-    isError = false;
     render();
 }
 
@@ -143,7 +143,8 @@ function handleEquals() {
         return;
     }
 
-    num1 = String(Number(result.toFixed(10)));
+    const DISPLAY_PRECISION = 10;
+    num1 = String(Number(result.toFixed(DISPLAY_PRECISION)));
     operator = null;
     num2 = null;
     lastActionWasEquals = true;
@@ -183,13 +184,14 @@ function render() {
 document.addEventListener('keydown', (e) => {
     const key = e.key;
 
-    if (/\d/.test(key)) {
+    if (/^\d$/.test(key)) {
         handleDigit(key);
         return;
     }
 
     switch (key) {
         case 'Backspace': e.preventDefault(); handleDelete(); break;
+        case '=':
         case 'Enter':     handleEquals(); break;
         case 'Escape':    e.preventDefault(); handleClear(); break;
         case '.':         handleDecimal(); break;
