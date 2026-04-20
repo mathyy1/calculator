@@ -4,6 +4,8 @@ A browser calculator built for The Odin Project's foundations course.
 
 **[Live demo](https://mathyy1.github.io/calculator/)**
 
+![Screenshot](screenshot.png);
+
 ## Features
 
 - Four basic operations plus modulo
