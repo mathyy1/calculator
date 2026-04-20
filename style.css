@@ -1,5 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+    --body-color: #1C1C1E;
+    --display-color: #2C2C2E;
+    --num-btn-color: #3A3A3C;
+    --op-btn-color: #FF9F0A;
+    --fun-btn-color: #636366;
+    --text-color: #F5F5F7;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    background-color: #100D1A;
+
+    font-family: 'Roboto Mono';
+    font-size: 25px;
+    color: var(--text-color);
+}
+
+.calculator-body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--body-color);
+    padding: 30px;
+    border-radius: 15px;
+    justify-content: center;
+    gap: 20px;
+
+    box-shadow: 5px 5px 15px black;
+}
+
+#display {
+    padding: 20px;
+    text-align: right;
+    background-color: var(--display-color);
+    border: none;
+    border-radius: 15px;
+
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+#display:focus {
+    outline: 2px solid var(--num-btn-color);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    border-radius: 40%;
+    min-width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: all 200ms;
+
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+.btn-zero {
+    grid-column: span 2;
+    border-radius: 30px;
+}
+
+.special {
+    background-color: var(--fun-btn-color);
+}
+
+.special:hover {
+    background-color: #555556;
+}
+
+.operator {
+    background-color: var(--op-btn-color);
+}
+
+.operator:hover {
+    background-color: #ab6d10;
+}
+
+.num {
+    background-color: var(--num-btn-color);
+}
+
+.num:hover {
+    background-color: #2d2d2f;
 }
