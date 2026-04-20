@@ -9,32 +9,32 @@
 </head>
 <body>
     <div class="calculator-body">
-        <input type="text" id="display" value="0">
+        <input type="text" id="display" readonly value="0">
 
         <div class="buttons">
-            <button class="special">AC</button>
-            <button class="special">DEL</button>
-            <button class="special">%</button>
-            <button class="operator">/</button>
+            <button data-action="clear" class="special">AC</button>
+            <button data-action="delete" class="special">DEL</button>
+            <button data-action="operator" data-value="%" class="special">%</button>
+            <button data-action="operator" data-value="/" class="operator">/</button>
 
-            <button class="num">7</button>
-            <button class="num">8</button>
-            <button class="num">9</button>
-            <button class="operator">x</button>
+            <button data-action="digit" data-value="7" class="num">7</button>
+            <button data-action="digit" data-value="8" class="num">8</button>
+            <button data-action="digit" data-value="9" class="num">9</button>
+            <button data-action="operator" data-value="*" class="operator">x</button>
 
-            <button class="num">4</button>
-            <button class="num">5</button>
-            <button class="num">6</button>
-            <button class="operator">-</button>
+            <button data-action="digit" data-value="4" class="num">4</button>
+            <button data-action="digit" data-value="5" class="num">5</button>
+            <button data-action="digit" data-value="6" class="num">6</button>
+            <button data-action="operator" data-value="-" class="operator">-</button>
 
-            <button class="num">1</button>
-            <button class="num">2</button>
-            <button class="num">3</button>
-            <button class="operator">+</button>
+            <button data-action="digit" data-value="1" class="num">1</button>
+            <button data-action="digit" data-value="2" class="num">2</button>
+            <button data-action="digit" data-value="3" class="num">3</button>
+            <button data-action="operator" data-value="+" class="operator">+</button>
 
-            <button class="num btn-zero">0</button>
-            <button class="num">.</button>
-            <button class="operator">=</button>
+            <button data-action="digit" data-value="0" class="num btn-zero">0</button>
+            <button data-action="decimal" class="num">.</button>
+            <button data-action="equals" class="operator">=</button>
         </div>
     </div>
 </body>
